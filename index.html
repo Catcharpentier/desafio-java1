@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding cake bakery</title>
+
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+</head>
+
+<body>
+    <section>
+        <div class="card">
+            <div>
+                <img class="card-img" src="./assets/images/wedding cake 3.webp" alt="wed cake 1">
+                <h2> Naked lemon glaze cake</h2>
+                <p> Rustic wedding cakes may also feature small clusters of simple flowers or herbs to maintain
+                    their unpretentious charm, evoking the feel of a cozy woodland gathering.</p>
+                <p><strong>Unit price:</strong> $<span id="unit-price">807.99</span></p>
+                <div>
+                    <p><strong>My order:</strong></p>
+                    <div class="quantity-selector">
+                        <button class="btn" 
+                        onclick="restar()">-</button>
+                        <span id="cantidad">0</span>
+                        <button class="btn" 
+                        onclick="sumar()">+</button>
+                    </div>
+                    <p>Total: $<span id="total">0.00</span></p>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+    <script>
+        let cantidad = 0;
+        const precioUnitario = 807.99;
+
+        function actualizar() {
+            document.getElementById("cantidad").innerText = cantidad;
+            document.getElementById("total").innerText = (cantidad * precioUnitario).toFixed(2);
+        }
+
+        function sumar() {
+            cantidad++;
+            actualizar();
+        }
+
+        function restar() {
+            if (cantidad > 0) {
+                cantidad--;
+                actualizar();
+            }
+        }
+    </script>
+</body>
+
+</html>
